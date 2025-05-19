@@ -1,0 +1,52 @@
+[2025-05-19T16:40:06.434Z] [info] [dd.trace_id=2894693931691345640 dd.span_id=5937523526254665954] Ohh!! this request failed because you just hit the /api/error endpoint
+[2025-05-19T16:40:06.435Z] [info] [dd.trace_id=2894693931691345640 dd.span_id=5937523526254665954] About to throw intentional error
+[2025-05-19T16:40:06.540Z] [info] [dd.trace_id=6046339939866996258 dd.span_id=7020119791228608142] Ohh!! this request failed because you just hit the /api/error endpoint
+[2025-05-19T16:40:06.540Z] [info] [dd.trace_id=6046339939866996258 dd.span_id=7020119791228608142] About to throw intentional error
+[2025-05-19T16:40:06.607Z] [info] [dd.trace_id=5864370356711228791 dd.span_id=4519170391557769300] Ohh!! this request failed because you just hit the /api/error endpoint
+[2025-05-19T16:40:06.607Z] [info] [dd.trace_id=5864370356711228791 dd.span_id=4519170391557769300] About to throw intentional error
+[2025-05-19T16:40:06.735Z] [info] [dd.trace_id=5546903608756924685 dd.span_id=721913167365777272] Ohh!! this request failed because you just hit the /api/error endpoint
+[2025-05-19T16:40:06.735Z] [info] [dd.trace_id=5546903608756924685 dd.span_id=721913167365777272] About to throw intentional error
+[2025-05-19T16:40:07.193Z] [info] [dd.trace_id=897205957356922939 dd.span_id=6874542495253356122] Ohh!! this request failed because you just hit the /api/error endpoint
+[2025-05-19T16:40:07.193Z] [info] [dd.trace_id=897205957356922939 dd.span_id=6874542495253356122] About to throw intentional error
+[2025-05-19T16:40:08.431Z] [info] [dd.trace_id=3611520937334223470 dd.span_id=8111155656036472412] Ohh!! this request failed because you just hit the /api/error endpoint
+[2025-05-19T16:40:08.431Z] [info] [dd.trace_id=3611520937334223470 dd.span_id=8111155656036472412] About to throw intentional error
+[2025-05-19T16:40:09.673Z] [info] [dd.trace_id=4699710158384350461 dd.span_id=6012082305019727546] Ohh!! this request failed because you just hit the /api/error endpoint
+[2025-05-19T16:40:09.673Z] [info] [dd.trace_id=4699710158384350461 dd.span_id=6012082305019727546] About to throw intentional error
+[2025-05-19T16:40:10.419Z] [info] [dd.trace_id=6081578170256891002 dd.span_id=7234340129309841292] Ohh!! this request failed because you just hit the /api/error endpoint
+[2025-05-19T16:40:10.419Z] [info] [dd.trace_id=6081578170256891002 dd.span_id=7234340129309841292] About to throw intentional error
+[2025-05-19T16:40:11.007Z] [info] [dd.trace_id=9078076409487816242 dd.span_id=4609822512923599734] Ohh!! this request failed because you just hit the /api/error endpoint
+[2025-05-19T16:40:11.007Z] [info] [dd.trace_id=9078076409487816242 dd.span_id=4609822512923599734] About to throw intentional error
+[2025-05-19T16:40:11.506Z] [info] [dd.trace_id=9109083856788315201 dd.span_id=7887221123430789702] Ohh!! this request failed because you just hit the /api/error endpoint
+[2025-05-19T16:40:11.506Z] [info] [dd.trace_id=9109083856788315201 dd.span_id=7887221123430789702] About to throw intentional error
+[2025-05-19T16:47:28.197Z] [info] [dd.trace_id=22123645907990846 dd.span_id=7054190653544379077] Received request: /api/chain
+[2025-05-19T16:47:28.308Z] [info] [dd.trace_id=22123645907990846 dd.span_id=8799457890830498565] This request will take some time as you hit the /api/slow endpoint
+[2025-05-19T16:47:29.035Z] [info] [dd.trace_id=6218309667014191774 dd.span_id=237763846731931132] This request will take some time as you hit the /api/slow endpoint
+[2025-05-19T16:47:29.338Z] [info] [dd.trace_id=22123645907990846 dd.span_id=8799457890830498565] Congrats!! You just sent a request to  /api/slow
+[2025-05-19T16:47:29.354Z] [info] [dd.trace_id=22123645907990846 dd.span_id=7054190653544379077] Chained call completed: /api/chain -> /api/slow
+[2025-05-19T16:47:29.367Z] [info] [dd.trace_id=1360758644547151828 dd.span_id=1186015068523773136] Received request: /api/chain
+[2025-05-19T16:47:29.377Z] [info] [dd.trace_id=1360758644547151828 dd.span_id=40898420615090341] This request will take some time as you hit the /api/slow endpoint
+[2025-05-19T16:47:30.036Z] [info] [dd.trace_id=6218309667014191774 dd.span_id=237763846731931132] Congrats!! You just sent a request to  /api/slow
+[2025-05-19T16:47:30.378Z] [info] [dd.trace_id=1360758644547151828 dd.span_id=40898420615090341] Congrats!! You just sent a request to  /api/slow
+[2025-05-19T16:47:30.386Z] [info] [dd.trace_id=1360758644547151828 dd.span_id=1186015068523773136] Chained call completed: /api/chain -> /api/slow
+[2025-05-19T16:47:30.824Z] [info] [dd.trace_id=803419094433067236 dd.span_id=6906857990545722283] Ohh!! this request failed because you just hit the /api/error endpoint
+[2025-05-19T16:47:30.824Z] [info] [dd.trace_id=803419094433067236 dd.span_id=6906857990545722283] About to throw intentional error
+[2025-05-19T16:47:32.100Z] [info] [dd.trace_id=7411563900382554808 dd.span_id=2425490589417479139] Received request: /api/chain
+[2025-05-19T16:47:32.111Z] [info] [dd.trace_id=7411563900382554808 dd.span_id=6477299723489901043] This request will take some time as you hit the /api/slow endpoint
+[2025-05-19T16:47:32.647Z] [info] [dd.trace_id=2849558742006335855 dd.span_id=4633363705606085271] This request will take some time as you hit the /api/slow endpoint
+[2025-05-19T16:47:33.113Z] [info] [dd.trace_id=7411563900382554808 dd.span_id=6477299723489901043] Congrats!! You just sent a request to  /api/slow
+[2025-05-19T16:47:33.115Z] [info] [dd.trace_id=7411563900382554808 dd.span_id=2425490589417479139] Chained call completed: /api/chain -> /api/slow
+[2025-05-19T16:47:33.649Z] [info] [dd.trace_id=2849558742006335855 dd.span_id=4633363705606085271] Congrats!! You just sent a request to  /api/slow
+[2025-05-19T16:50:58.100Z] [info] [dd.trace_id=1895054003910475440 dd.span_id=6303215700169459329] Ohh!! this request failed because you just hit the /api/error endpoint
+[2025-05-19T16:50:58.101Z] [info] [dd.trace_id=1895054003910475440 dd.span_id=6303215700169459329] About to throw intentional error
+[2025-05-19T16:50:58.406Z] [info] [dd.trace_id=7544366865883503944 dd.span_id=4125028887266627824] Ohh!! this request failed because you just hit the /api/error endpoint
+[2025-05-19T16:50:58.406Z] [info] [dd.trace_id=7544366865883503944 dd.span_id=4125028887266627824] About to throw intentional error
+[2025-05-19T16:50:58.657Z] [info] [dd.trace_id=5727333443780629625 dd.span_id=7691988693583297740] Ohh!! this request failed because you just hit the /api/error endpoint
+[2025-05-19T16:50:58.657Z] [info] [dd.trace_id=5727333443780629625 dd.span_id=7691988693583297740] About to throw intentional error
+[2025-05-19T16:50:58.809Z] [info] [dd.trace_id=1558101508108174372 dd.span_id=331680515733107818] Ohh!! this request failed because you just hit the /api/error endpoint
+[2025-05-19T16:50:58.809Z] [info] [dd.trace_id=1558101508108174372 dd.span_id=331680515733107818] About to throw intentional error
+[2025-05-19T16:50:58.923Z] [info] [dd.trace_id=8602602149890418198 dd.span_id=4195948410561733267] Ohh!! this request failed because you just hit the /api/error endpoint
+[2025-05-19T16:50:58.923Z] [info] [dd.trace_id=8602602149890418198 dd.span_id=4195948410561733267] About to throw intentional error
+[2025-05-19T16:50:59.051Z] [info] [dd.trace_id=5772784534094171321 dd.span_id=57418828506792590] Ohh!! this request failed because you just hit the /api/error endpoint
+[2025-05-19T16:50:59.051Z] [info] [dd.trace_id=5772784534094171321 dd.span_id=57418828506792590] About to throw intentional error
+[2025-05-19T16:50:59.188Z] [info] [dd.trace_id=3022917414023584635 dd.span_id=4712867222045007392] Ohh!! this request failed because you just hit the /api/error endpoint
+[2025-05-19T16:50:59.189Z] [info] [dd.trace_id=3022917414023584635 dd.span_id=4712867222045007392] About to throw intentional error
