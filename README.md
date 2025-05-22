@@ -34,3 +34,5 @@ Open your terminal and follow the steps below to clone the repo and start the ap
    npm run dev
    ```
 4. **Open your browser**: Navigate to [http://localhost:3000](http://localhost:3000) to view the application.
+
+
