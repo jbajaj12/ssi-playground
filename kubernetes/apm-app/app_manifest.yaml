@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apm-app
+  labels:
+    name: apm-app
+    app: apm-app
+spec:
+  selector:
+    matchLabels:
+      service: apm-app
+  replicas: 1
+  template:
+    metadata:
+      name: apm-app
+      labels:
+        service: apm-app
+      annotations: 
+        prometheus.io/scrape: "true"
+    spec:
+      containers:
+        - name: apm-app
+          image: ccdaniele/apm-test:v1
+          imagePullPolicy: Always
+          ports:
+            - name: client-port
+              containerPort: 3000
