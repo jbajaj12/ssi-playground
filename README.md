@@ -36,3 +36,30 @@ Open your terminal and follow the steps below to clone the repo and start the ap
 4. **Open your browser**: Navigate to [http://localhost:3000](http://localhost:3000) to view the application.
 
 
+## Deploying app in Kubernetes
+
+1. **Ensure you have a Kubernetes cluster running**: You can use Minikube, Kind, or any other Kubernetes service.
+2. Apply the application manifest to deploy the app in your Kubernetes cluster:
+
+```
+kubectl apply -f kubernetes/apm-app/app_manifest.yaml
+```
+3. Let’s wait a couple of minutes and confirm that the application has been successfully deployed by running: 
+
+```
+kubectl get pods 
+```
+​
+   The output should be similar to this: 
+```
+NAME                       READY   STATUS    RESTARTS   AGE
+apm-app-xxxxxxxxx   1/1     Running   0          106s
+```
+​
+4. Copy the name of the pod and let’s access to the application by creating a tunnel between kubernetes and our mac: 
+
+```
+kubectl port-forward apm-app-xxxxxxxxx 3000:3000
+```
+​
+5. Now open localhost:3000 in your browser and you should see the app. 

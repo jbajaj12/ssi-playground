@@ -1,5 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
+# --------------- deployment -------------------->
 metadata:
   name: apm-app
   labels:
@@ -10,6 +11,7 @@ spec:
     matchLabels:
       service: apm-app
   replicas: 1
+# --------------- pod template -------------------->
   template:
     metadata:
       name: apm-app
