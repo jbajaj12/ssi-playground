@@ -2,6 +2,7 @@ apiVersion: "datadoghq.com/v2alpha1"
 kind: "DatadogAgent"
 metadata:
   name: "datadog"
+  namespace: "datadog"
 spec:
   global:
     site: "datadoghq.com"
@@ -19,7 +20,7 @@ spec:
       enabled: true
     apm:
       instrumentation:
-        enabled: false
+        enabled: true
   override:
     nodeAgent:
       env:
@@ -27,3 +28,12 @@ spec:
           value: "true"
         - name: DD_USE_FQDN
           value: "false"
+      tolerations:
+        - key: "node-role.kubernetes.io/control-plane"
+          operator: "Exists"
+          effect: "NoSchedule"
+    clusterAgent:
+      tolerations:
+        - key: "node-role.kubernetes.io/control-plane"
+          operator: "Exists"
+          effect: "NoSchedule"

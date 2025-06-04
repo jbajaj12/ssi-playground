@@ -18,6 +18,7 @@ spec:
         service: apm-app
       annotations: 
         prometheus.io/scrape: "true"
+        admission.datadoghq.com/enabled: "true"
     spec:
 # ------- Container Configuration ---------> Specify the container parameters
       containers:
@@ -27,4 +28,3 @@ spec:
           ports:
             - name: client-port
               containerPort: 3000
-
