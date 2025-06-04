@@ -12,6 +12,14 @@ spec:
       apiSecret:
         secretName: "datadog-secret"
         keyName: "api-key"
+  features:
+    liveProcessCollection:
+      enabled: true
+    logCollection:
+      enabled: true
+    apm:
+      instrumentation:
+        enabled: false
   override:
     nodeAgent:
       env:
