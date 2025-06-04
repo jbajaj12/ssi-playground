@@ -1,17 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
-# --------------- deployment -------------------->
+# ------- Deployment Configuration -----------> Ensures that the is always pod running
 metadata:
   name: apm-app
   labels:
     name: apm-app
-    app: apm-app
 spec:
   selector:
     matchLabels:
       service: apm-app
   replicas: 1
-# --------------- pod template -------------------->
+# ------- Pod Configuration ---------> Specify the pod parameters
   template:
     metadata:
       name: apm-app
@@ -20,6 +19,7 @@ spec:
       annotations: 
         prometheus.io/scrape: "true"
     spec:
+# ------- Container Configuration ---------> Specify the container parameters
       containers:
         - name: apm-app
           image: ccdaniele/apm-test:v1
@@ -27,3 +27,4 @@ spec:
           ports:
             - name: client-port
               containerPort: 3000
+

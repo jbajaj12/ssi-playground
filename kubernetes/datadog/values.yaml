@@ -4,18 +4,12 @@ metadata:
   name: "datadog"
 spec:
   global:
+    clusterName: "apm-test"
     site: "datadoghq.com"
-    clusterName: apm-test
-    kubelet:
-      tlsVerify: false
+    tlsVerify: false
+    tags:
+      - "env:apm-test"
     credentials:
       apiSecret:
         secretName: "datadog-secret"
         keyName: "api-key"
-  override:
-    nodeAgent:
-      env:
-        - name: DD_HOSTNAME_TRUST_UTS_NAMESPACE
-          value: "true"
-        - name: DD_USE_FQDN
-          value: "false"
