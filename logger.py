@@ -1,45 +1,5 @@
 import logging
 import sys
-from datetime import datetime
-
-# Try to import ddtrace - make it optional
-try:
-    from ddtrace import tracer
-    DDTRACE_AVAILABLE = True
-    print("✅ Datadog tracing libraries loaded")
-except ImportError:
-    DDTRACE_AVAILABLE = False
-    print("⚠️  ddtrace not available - running without Datadog tracing")
-    # Create a dummy tracer for compatibility
-    class DummyTracer:
-        def current_span(self):
-            return None
-    tracer = DummyTracer()
-
-# Create a custom formatter that includes trace and span IDs
-class DatadogFormatter(logging.Formatter):
-    def format(self, record):
-        if DDTRACE_AVAILABLE:
-            try:
-                span = tracer.current_span()
-                if span:
-                    trace_id = getattr(span, 'trace_id', 'N/A')
-                    span_id = getattr(span, 'span_id', 'N/A')
-                else:
-                    trace_id = 'N/A'
-                    span_id = 'N/A'
-            except Exception:
-                trace_id = 'N/A'
-                span_id = 'N/A'
-        else:
-            trace_id = 'N/A'
-            span_id = 'N/A'
-        
-        # Add trace info to the record
-        record.dd_trace_id = trace_id
-        record.dd_span_id = span_id
-        
-        return super().format(record)
 
 # Configure logger
 logger = logging.getLogger('apm_demo')
@@ -53,9 +13,9 @@ file_handler.setLevel(logging.INFO)
 console_handler = logging.StreamHandler(sys.stdout)
 console_handler.setLevel(logging.INFO)
 
-# Formatter with trace information
-formatter = DatadogFormatter(
-    '[%(asctime)s] [%(levelname)s] [dd.trace_id=%(dd_trace_id)s dd.span_id=%(dd_span_id)s] %(message)s'
+# Simple formatter (trace IDs will be automatically injected with auto-instrumentation)
+formatter = logging.Formatter(
+    '[%(asctime)s] [%(levelname)s] %(message)s'
 )
 
 file_handler.setFormatter(formatter)
@@ -65,5 +25,5 @@ logger.addHandler(file_handler)
 logger.addHandler(console_handler)
 
 def log_message(message: str):
-    """Log a message with optional trace context."""
-    logger.info(message) 
+    """Log a message. Trace IDs will be automatically injected when using ddtrace auto-instrumentation."""
+    logger.info(message)
