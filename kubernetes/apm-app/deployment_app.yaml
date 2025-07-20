@@ -5,6 +5,7 @@ metadata:
   name: apm-app
   labels:
     name: apm-app
+    app: python-apm-demo
 spec:
   selector:
     matchLabels:
@@ -16,15 +17,36 @@ spec:
       name: apm-app
       labels:
         service: apm-app
+        app: python-apm-demo
       annotations: 
         prometheus.io/scrape: "true"
     spec:
 # ------- Container Configuration ---------> Specify the container parameters
       containers:
         - name: apm-app
-          image: ccdaniele/apm-test:v1
+          image: jb1cfc/apm-demo-python:latest
           imagePullPolicy: Always
           ports:
             - name: client-port
-              containerPort: 3000
+              containerPort: 8000  # Changed from 3000 to 8000 for Python FastAPI app
+          env:
+            - name: DD_SERVICE
+              value: "apm-demo-python"
+            - name: DD_ENV
+              value: "production"
+            - name: DD_VERSION
+              value: "1.0.0"
+          # Health checks for FastAPI app
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8000
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 5
 
