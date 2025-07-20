@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-2-3... This is an APM test</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Datadog APM Demo</h1>
+        
+        <button id="slow-btn" class="btn btn-blue">
+            Trigger Slow API
+        </button>
+        
+        <button id="chain-btn" class="btn btn-green">
+            Trigger Chained API
+        </button>
+        
+        <button id="error-btn" class="btn btn-red">
+            Trigger Error API
+        </button>
+        
+        <p id="message" class="message"></p>
+    </main>
+
+    <script>
+        async function callApi(endpoint) {
+            const messageEl = document.getElementById('message');
+            messageEl.textContent = 'Loading...';
+            messageEl.className = 'message';
+            
+            try {
+                const response = await fetch(`/api/${endpoint}`);
+                const data = await response.json();
+                
+                if (response.ok) {
+                    messageEl.textContent = data.message || 'Success';
+                    messageEl.className = 'message success';
+                } else {
+                    messageEl.textContent = data.detail || 'Error occurred';
+                    messageEl.className = 'message error';
+                }
+            } catch (err) {
+                messageEl.textContent = 'Network error occurred';
+                messageEl.className = 'message error';
+            }
+        }
+
+        // Add event listeners
+        document.getElementById('slow-btn').addEventListener('click', () => callApi('slow'));
+        document.getElementById('chain-btn').addEventListener('click', () => callApi('chain'));
+        document.getElementById('error-btn').addEventListener('click', () => callApi('error'));
+    </script>
+</body>
+</html> 
