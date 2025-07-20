@@ -129,6 +129,19 @@ EXPOSE 8000
 CMD ["python", "run.py"]
 ```
 
+## 🐳 Docker Deployment
+
+### Build and Push
+
+```bash
+docker build -t jb1cfc/apm-demo-python:latest .
+docker push jb1cfc/apm-demo-python:latest
+```
+
+### Kubernetes Deployment
+
+The application can be deployed using the provided Kubernetes manifests in `kubernetes/apm-app/`.
+
 ## 🔄 Development
 
 The application runs with **auto-reload** enabled by default. Any changes to Python files will automatically restart the server.
